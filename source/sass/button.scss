@@ -1,0 +1,23 @@
+.button {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: 1px solid $brand-color;
+  border-radius: 0;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    background-color: $brand-color;
+  }
+
+  &:active {
+    text-decoration: none;
+    opacity: 0.3;
+  }
+}
