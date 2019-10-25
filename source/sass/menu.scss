@@ -3,6 +3,8 @@
 }
 
 .menu__list {
+  z-index: 10;
+
   @include reset-list-style;
   display: flex;
   flex-wrap: wrap;

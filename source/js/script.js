@@ -39,23 +39,18 @@
 })();
 
 // ЗАМЕНА ТЕКСТА
-var changeDescriptionText = function () {
-  var description = document.getElementById('description');
-  if (description) {
-    if (window.matchMedia('(max-width: 767px)').matches) {
-      description.innerHTML = 'Работаем на российском рынке с&nbsp;<b>1992</b>&nbsp;года.';
-    } else {
-      description.innerHTML = 'Компания ЗАО&nbsp;«НCП «МонтCтрой» успешно работает на российском рынке с&nbsp;<b>1992</b>&nbsp;года, и&nbsp;за это время зарекомендовала себя как ведущий разработчик качественных систем установок для&nbsp;предприятий, выполняет полный комплекс строительно-монтажных и&nbsp;пуско-наладочных работ по&nbsp;электроснабжению зданий и&nbsp;сооружений.';
+(function () {
+  var changeDescriptionText = function () {
+    var description = document.getElementById('description');
+    if (description) {
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        description.innerHTML = 'Работаем на российском рынке с&nbsp;<b>1992</b>&nbsp;года.';
+      } else {
+        description.innerHTML = 'Компания ЗАО&nbsp;«НCП «МонтCтрой» успешно работает на российском рынке с&nbsp;<b>1992</b>&nbsp;года, и&nbsp;за это время зарекомендовала себя как ведущий разработчик качественных систем установок для&nbsp;предприятий, выполняет полный комплекс строительно-монтажных и&nbsp;пуско-наладочных работ по&nbsp;электроснабжению зданий и&nbsp;сооружений.';
+      }
     }
-  }
-};
+  };
 
-if (window.matchMedia('(max-width: 767px)').matches) {
-  var doc = document.querySelector('body');
-  doc.style.backgroundColor = 'plum';
-}
-
-
-window.addEventListener('resize', changeDescriptionText);
-changeDescriptionText();
-
+  window.addEventListener('resize', changeDescriptionText);
+  changeDescriptionText();
+})();
