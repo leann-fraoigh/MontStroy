@@ -16,6 +16,19 @@
   list-style: none;
 }
 
+@mixin line {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 71%;
+    height: 2px;
+    background-color: $dark-color;
+    top: 24px;
+    right: $l-padding;
+  }
+}
+
 // @mixin button {
 //   display: inline-block;
 //   padding: 14px 26px;
