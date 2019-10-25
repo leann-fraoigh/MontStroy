@@ -1,0 +1,133 @@
+.menu__toggler {
+  display: none;
+}
+
+.menu__list {
+  @include reset-list-style;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.menu__item {
+  margin-right: 24px;
+}
+
+.menu__link {
+  color: $light-gray;
+
+  &:hover,
+  &:focus {
+    color: $dark-color;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: $m-width-max) {
+  .menu {
+    &--menu-opened {
+      & .menu__toggler {
+        background-image: url("../img/icon-menu-open.svg"); //Может быть, заменить на close
+      }
+    }
+
+    &--menu-closed {
+      & .menu__toggler {
+        background-image: url("../img/icon-menu-open.svg");
+      }
+
+      & .menu__list {
+        display: none;
+      }
+    }
+
+    &--no-js {
+      & .menu__toggler {
+        display: none;
+      }
+    }
+  }
+
+  .menu__toggler {
+    display: block;
+
+    width: 26px;
+    height: 22px;
+
+    padding: 0;
+
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .menu__toggler span {
+    @include visually-hidden;
+  }
+
+  .menu__list {
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+    // flex-direction: column;
+    width: 207px;
+    display: block;
+  }
+
+  .menu__item {
+    width: 100%;
+    margin-right: 0;
+
+  }
+
+  .menu__link {
+    display: block;
+    width: 167px;
+    padding: 10px 20px;
+
+    text-align: center;
+    font-size: 13.5px;
+    font-weight: 400;
+
+    background-color: #e7e7e7;
+    // border-bottom: qpx solid ;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05); ///В макете размытие 2 но не работает
+
+    &--main {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #ccc;
+    }
+  }
+}
+
+@media (max-width: $s-width-max) {
+  .menu__toggler {
+    width: 18px;
+    height: 14px;
+  }
+
+  .menu__list {
+    width: 100%;
+  }
+
+  .menu__link {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}

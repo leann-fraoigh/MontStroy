@@ -1,4 +1,6 @@
 .page {
+  min-height: 100vh;
+
   font-size: 15px;
   line-height: 20px;
   font-weight: 400;
@@ -10,16 +12,16 @@
 
 .page {
   & h1 {
-    color: #fffffe;
+    color: $text-light-color;
     font-size: 72px;
     font-weight: 900;
     font-family: 'Raleway', Helvetica, sans-serif;
-    // line-height: 94px;
+    line-height: normal;
 
     letter-spacing: 3.6px;
     text-transform: uppercase;
 
-    margin-left: -4px;
+    // margin-left: -4px;
   }
 
   & h2 {

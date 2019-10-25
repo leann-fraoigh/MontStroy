@@ -1,0 +1,136 @@
+.main-header {
+  color: $light-color;
+  background-color: $dark-color;
+
+  background-image: url('../img/header-l@1x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  // background-size: 1920px auto;
+}
+
+.main-header__wrapper {
+  padding-top: 104px;
+  padding-bottom: 64px;
+}
+
+.main-header h1 {
+  margin-bottom: 24px; // Против склопываниия
+}
+
+.main-header__description {
+  max-width: 1020px;
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: 500;
+  color: $text-light-color;
+}
+
+.main-header b {
+  color: $brand-color;
+}
+
+.main-header__button {
+  box-sizing: border-box;
+  width: 302px;
+  margin-top: 29px;
+  padding: 7px 30px;
+
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 900;
+
+  &:not(:last-of-type) {
+    margin-right: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $dark-color;
+  }
+}
+
+.main-header__advantages {
+  margin-top: 115px;
+}
+
+@media (max-width: $m-width-max) {
+  .main-header {
+    position: relative;
+    margin-bottom: 300px;
+
+    background-image: url('../img/header-m@1x.jpg');
+  }
+  .main-header__wrapper {
+    padding-top: 100px;
+    padding-bottom: 130px;
+
+    @media (min-width: $m-width) {
+      padding-left: 84px;
+      padding-right: 84px;
+    }
+  }
+
+  .main-header h1 {
+    margin-bottom: 18px;
+    @media (min-width: $m-width) {
+      margin-right: -15px;
+    }
+  }
+
+  main-header__description {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: 400;
+  }
+
+  .main-header__button {
+    width: 290px;
+    margin-top: 70px;
+    padding: 14px 30px;
+
+    font-size: 16px;
+    line-height: 26px;
+
+    &:not(:last-of-type) {
+      margin-right: 16px;
+    }
+  }
+
+  .main-header__advantages {
+    position: absolute;
+    left: 0;
+    bottom: -300px;
+    margin-top: 10px; //temp
+  }
+}
+
+@media (max-width: $s-width-max) {
+  .main-header {
+    text-align: center;
+  }
+
+  .main-header__wrapper {
+    padding-top: 117px;
+    padding-bottom: 52px;
+  }
+
+  .main-header__button {
+    width: 280px;
+    padding: 16px 15px;
+
+    &:not(:last-of-type) {
+      margin-top: 42px;
+      margin-bottom: 10px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 0;
+    }
+  }
+
+  .main-header h1 {
+    margin-bottom: 21px;
+  }
+}

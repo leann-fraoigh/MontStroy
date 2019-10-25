@@ -11,14 +11,56 @@
   <link rel="preload" href="fonts/roboto-v20-cyrillic_latin-500.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/roboto-v20-cyrillic_latin-700.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/roboto-v20-cyrillic_latin-900.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="fonts/roboto-v20-cyrillic-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/roboto-v20-cyrillic_latin-regular.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-cyrillic-700.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-cyrillic-900.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-v14-latin-700.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-v14-latin-900.woff2" as="font" crossorigin="anonymous">
 </head>
 <body class="page">
-  <p>Шрифт</p>
-  <h2>Цра</h2>
+  <header class="header wrapper">
+    <div class="header__logo"><img src="img/logo@1x.png" alt="Логотип компании МонтСтрой" width="141" height="60"></div>
+    <nav class="header__menu menu menu--menu-opened menu--no-js">
+      <button class="button menu__toggler" type="button"><span> Открыть меню</span></button>
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#" class="menu__link menu__link--main">Главная</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">Проекты</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+      </ul>
+    </nav>
+    <div>
+      <ul class="header__contacts-list">
+        <li class="header__contacts-tel"><a href="tel:+74954526723">+7&nbsp;(495)&nbsp;452-67-23</a></li>
+        <li class="header__contacts-contact"><a href="#" class="button">Обратная связь</a></li>
+      </ul>
+    </div>
+  </header>
+  <main class="main">
+    <header class="main-header">
+      <div class="wrapper main-header__wrapper">
+        <h1>Cтроительно-монтажные работы</h1>
+        <p id="description" class="main-header__description">Компания ЗАО&nbsp;«НCП «МонтCтрой» успешно работает на российском рынке с&nbsp;<b>1992</b>&nbsp;года, и&nbsp;за это время зарекомендовала себя как ведущий разработчик качественных систем установок для&nbsp;предприятий, выполняет полный комплекс строительно-монтажных и&nbsp;пуско-наладочных работ по&nbsp;электроснабжению зданий и&nbsp;сооружений.</p>
+        <a href="#" class="main-header__button button">Наши услуги</a>
+        <a href="#" class="main-header__button button">Связаться с нами</a>
+        <section class="main-header__advantages advantages">
+          <h2 class="visually-hidden">Наши преимушества</h2>
+          <ul class="advantages__list">
+            <li class="advantages__item advantages__item--quality">
+              <svg width="62" height="64"><use xlink:href="img/sprite_auto.svg#icon-like"></use></svg>
+              <p>Гарантированное высокое качество продукции</p></li>
+            <li class="advantages__item advantages__item--deadlines">
+              <svg width="74" height="49"><use xlink:href="img/sprite_auto.svg#icon-handshake"></use></svg>
+              <p>Исполнение всех сроков&nbsp;и&nbsp;обязательств</p></li>
+            <li class="advantages__item advantages__item--settings">
+              <svg width="70" height="69"><use xlink:href="img/sprite_auto.svg#icon-settings"></use></svg>
+              <p>Собственная производственная база</p></li>
+          </ul>
+        </section>
+      </div>
+    </header>
+  </main>
+  <script src="js/script.js"></script>
 </body>
 </html>

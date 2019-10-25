@@ -1,0 +1,23 @@
+.wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: $l-padding;
+  padding-right: $l-padding;
+}
+
+@media (max-width: $m-width-max) {
+  .wrapper {
+    max-width: 979px;
+    padding-left: $m-padding;
+    padding-right: $m-padding;
+  }
+}
+
+@media (max-width: $s-width-max) {
+  .wrapper {
+    max-width: 727px;
+    padding-left: $s-padding;
+    padding-right: $s-padding;
+  }
+}
+
