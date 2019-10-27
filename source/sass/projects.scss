@@ -1,0 +1,33 @@
+.projects__list li {
+  position: relative;
+  color: $light-color;
+  background-color: $middle-gray;
+}
+
+.projects__list p {
+  line-height: 22px;
+}
+
+.projects__list .button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 42px;
+  height: 30px;
+
+  border-width: 2px;
+  border-color: $light-color-transparent;
+
+  background-image: url("../img/arrow-right.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-color;
+
+    & svg {
+      fill: #000000;
+    }
+  }
+}

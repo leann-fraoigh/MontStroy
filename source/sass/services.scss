@@ -39,11 +39,11 @@
   @include reset-list-style;
 }
 
-.services__subitem {
+.services__sublist li {
   margin-bottom: 10px;
 }
 
-.services__subitem a {
+.services__sublist a {
   font-size: 13px;
   color: $dark-gray;
   line-height: normal;
