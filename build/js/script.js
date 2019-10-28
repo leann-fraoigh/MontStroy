@@ -124,6 +124,35 @@
   moveAdvantages();
 })();
 
+// // ПОЛИФИЛЛ ДЛЯ REMOVE в IE
+// (function () {
+//   var arr = [window.Element, window.CharacterData, window.DocumentType];
+//   var args = [];
+
+//   arr.forEach(function (item) {
+//     if (item) {
+//       args.push(item.prototype);
+//     }
+//   });
+
+//   // from:https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+//   (function (arr) {
+//     arr.forEach(function (item) {
+//       if (item.hasOwnProperty('remove')) {
+//         return;
+//       }
+//       Object.defineProperty(item, 'remove', {
+//         configurable: true,
+//         enumerable: true,
+//         writable: true,
+//         value: function remove() {
+//           this.parentNode.removeChild(this);
+//         }
+//       });
+//     });
+//   })(args);
+// })();
+
 // ПЕРЕМЕЩЕНИЕ БЛОКА ОПИСАНИЯ
 (function () {
   var moveDescription = function () {
@@ -139,7 +168,8 @@
     if (descriptionElem && buttonsElem && advantagesElem) {
       if (window.matchMedia('(max-width: 767px)').matches && oldParentDiv.contains(descriptionElem)) {
         // Перемещаем блок
-        advantagesElem.before(descriptionElem);
+        newParentDiv.insertBefore(descriptionElem, advantagesElem);
+        // advantagesElem.before(descriptionElem);
         // Меняем классы
         descriptionElem.classList.remove('main-header__description');
         descriptionElem.classList.add('wrapper');
@@ -147,13 +177,15 @@
         buttonsElem.insertAdjacentHTML('beforebegin', substitute);
       } else if (window.matchMedia('(min-width: 768px)').matches && newParentDiv.contains(descriptionElem)) {
         // Перемещаем блок
-        buttonsElem.before(descriptionElem);
+        // buttonsElem.before(descriptionElem);
+        oldParentDiv.insertBefore(descriptionElem, buttonsElem);
         // Меняем классы
         descriptionElem.classList.remove('wrapper');
         descriptionElem.classList.add('main-header__description');
         // Удаляем замену
         if (document.querySelector('.main-header__description-substitute')) {
-          document.querySelector('.main-header__description-substitute').remove();
+          // document.querySelector('.main-header__description-substitute').remove();
+          document.querySelector('.main-header__description-substitute').parentNode.removeChild(document.querySelector('.main-header__description-substitute'));
         }
       }
     }
@@ -190,3 +222,4 @@
     servicesLink.addEventListener('click', handleAnchorClick);
   }
 })();
+
