@@ -17,11 +17,12 @@ $retina-dppx: 1.5dppx;
 // Цвета
 $brand-color: #00ffd8;
 $light-color: #FFFFFF;
-$light-color-transparent: rgba(255, 255, 255, 0.34); // #575757 Рамки и стрелки кнопок в Проектах
+$light-color-transparent: rgba(255, 255, 255, 0.34); // rgba(255, 255, 255, 0.34) Рамки и стрелки кнопок в Проектах
 $text-light-color: #FFFFFE;
 $dark-color: #000000;
 $light-dark-color: #222222; //Телефон в хедере
 
+$lightest-gray: #d6d6d6; //Кнопки слайдера Преимуществ
 $light-gray: #707070;
 $middle-gray: #666666;
 $dark-gray: rgba(51, 51, 51, 0.77); // #333333

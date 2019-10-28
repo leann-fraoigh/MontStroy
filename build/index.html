@@ -16,6 +16,7 @@
   <link rel="preload" href="fonts/raleway-cyrillic-900.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-v14-latin-700.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-v14-latin-900.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/circe-regular.woff2" as="font" crossorigin="anonymous">
 </head>
 <body class="page">
   <header class="header">
@@ -34,7 +35,7 @@
       <div>
         <ul class="header__contacts-list">
           <li class="header__contacts-tel"><a href="tel:+74954526723">+7&nbsp;(495)&nbsp;452-67-23</a></li>
-          <li class="header__contacts-contact"><a href="#" class="button">Обратная связь</a></li>
+          <li class="header__contacts-contact"><a href="#consultation" class="button">Обратная связь</a></li>
         </ul>
       </div>
     </div>
@@ -43,26 +44,33 @@
     <header class="main-header">
       <div class="wrapper main-header__wrapper">
         <h1>Cтроительно-монтажные работы</h1>
-        <p id="description" class="main-header__description">Компания ЗАО&nbsp;«НCП «МонтCтрой» успешно работает на российском рынке с&nbsp;<b>1992</b>&nbsp;года, и&nbsp;за это время зарекомендовала себя как ведущий разработчик качественных систем установок для&nbsp;предприятий, выполняет полный комплекс строительно-монтажных и&nbsp;пуско-наладочных работ по&nbsp;электроснабжению зданий и&nbsp;сооружений.</p>
-        <a href="#" class="main-header__button button">Наши услуги</a>
-        <a href="#" class="main-header__button button">Связаться с нами</a>
+        <p class="main-header__description description">Компания ЗАО&nbsp;«НCП «МонтCтрой» успешно работает на российском рынке с&nbsp;<b>1992</b>&nbsp;года, и&nbsp;за это время зарекомендовала себя как ведущий разработчик качественных систем установок для&nbsp;предприятий, выполняет полный комплекс строительно-монтажных и&nbsp;пуско-наладочных работ по&nbsp;электроснабжению зданий и&nbsp;сооружений.</p>
+        <div class="main-header__buttons-container">
+          <a href="#services" class="main-header__button--services main-header__button  button">Наши услуги</a>
+          <a href="#consultation" class="main-header__button main-header__button--consultation  button">Связаться с нами</a>
+        </div>
         <section class="main-header__advantages advantages">
           <h2 class="visually-hidden">Наши преимушества</h2>
           <ul class="advantages__list">
             <li class="advantages__item advantages__item--quality">
               <svg width="62" height="64"><use xlink:href="img/sprite_auto.svg#icon-like"></use></svg>
               <p>Гарантированное высокое качество продукции</p></li>
-            <li class="advantages__item advantages__item--deadlines">
+            <li class="advantages__item advantages__item--deadlines advantages__item--selected">
               <svg width="74" height="49"><use xlink:href="img/sprite_auto.svg#icon-handshake"></use></svg>
               <p>Исполнение всех сроков&nbsp;и&nbsp;обязательств</p></li>
             <li class="advantages__item advantages__item--settings">
               <svg width="70" height="69"><use xlink:href="img/sprite_auto.svg#icon-settings"></use></svg>
               <p>Собственная производственная база</p></li>
           </ul>
+          <div class="advantages__buttons">
+            <button type="button" class="button" id="1"><span class="visually-hidden">Первый слайд</span></button>
+            <button type="button" class="button button--selected" id="2"><span class="visually-hidden">Второй слайд</span></button>
+            <button type="button" class="button" id="3"><span class="visually-hidden">Третий слайд</span></button>
+          </div>
         </section>
       </div>
     </header>
-    <section class="services wrapper">
+    <section id="services" class="services wrapper">
       <h2>Услуги</h2>
       <ul class="services__list">
         <li class="services__item">
@@ -182,7 +190,7 @@
       <div class="footer__contacts">
         <h2>Контакты</h2>
         <div class="footer__map"></div>
-        <section class="footer__form">
+        <section id="consultation" class="footer__form">
           <h3>Свяжитесь с нами</h3>
           <form action="https://echo.htmlacademy.ru" method="POST" class="form">
             <div class="form__field form__field--text">
@@ -249,6 +257,7 @@
       <p class="footer__copyright">1992-2018 ©  ЗАО “НСП ”МонтСтрой”. Все права защищены</p>
     </div>
   </footer>
+  <script src="js/libs.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

@@ -19,16 +19,20 @@
   margin-bottom: 24px; // Против склопываниия
 }
 
-.main-header__description {
-  max-width: 1020px;
-  font-size: 24px;
-  line-height: 38px;
-  font-weight: 500;
-  color: $text-light-color;
-}
+// .main-header__description {
+//   max-width: 1020px;
+//   font-size: 24px;
+//   line-height: 38px;
+//   font-weight: 500;
+//   color: $text-light-color;
+// }
 
 .main-header b {
   color: $brand-color;
+}
+
+.main-header__buttons-container {
+  margin-left: -14px;
 }
 
 .main-header__button {
@@ -41,9 +45,10 @@
   line-height: 40px;
   font-weight: 900;
 
-  &:not(:last-of-type) {
-    margin-right: 14px;
-  }
+  // &:not(:last-of-type) {
+  //   margin-right: 14px;
+  // }
+  margin-left: 14px;
 
   &:hover,
   &:focus {
@@ -58,7 +63,7 @@
 @media (max-width: $m-width-max) {
   .main-header {
     position: relative;
-    margin-bottom: 300px;
+    margin-bottom: 67px;
 
     background-image: url(../img/header-m@1x.jpg);
     background-position: 36.6% center;
@@ -80,11 +85,15 @@
     }
   }
 
-  .main-header__description {
-    max-width: 700px;
-    font-size: 16px;
-    line-height: normal;
-    font-weight: 400;
+  // .main-header__description {
+  //   max-width: 700px;
+  //   font-size: 16px;
+  //   line-height: normal;
+  //   font-weight: 400;
+  // }
+
+  .main-header__buttons-container {
+    margin-left: -16px;
   }
 
   .main-header__button {
@@ -95,21 +104,25 @@
     font-size: 16px;
     line-height: 26px;
 
-    &:not(:last-of-type) {
-      margin-right: 16px;
-    }
+    // &:not(:last-of-type) {
+    //   margin-right: 16px;
+    // }
+    margin-left: 16px;
   }
 
-  .main-header__advantages {
-    position: absolute;
-    left: 0;
-    bottom: -300px;
-    margin-top: 10px; //temp
-  }
+  // .main-header__advantages {
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: -300px;
+  //   margin-top: 10px; //temp
+
+  // }
 }
 
 @media (max-width: $s-width-max) {
   .main-header {
+    margin-bottom: 35px;
+
     text-align: center;
 
     background-image: url("../img/header-s@1x.jpg");
@@ -121,13 +134,20 @@
     padding-bottom: 52px;
   }
 
+  .main-header__buttons-container {
+    margin-left: 0;
+  }
+
   .main-header__button {
+    display: block;
     width: 280px;
-    margin-right: 16px;
+    // margin-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 16px 15px;
 
-    &:not(:last-of-type) {
-      margin-top: 42px;
+    &:first-of-type {
+      margin-top: 58px;
       margin-bottom: 10px;
     }
 
@@ -138,6 +158,14 @@
 
   .main-header h1 {
     margin-bottom: 21px;
+  }
+
+  .main-header__description-substitute {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: 400;
+    color: $text-light-color;
   }
 }
 
@@ -150,7 +178,7 @@
     }
 
     @media (max-width: $s-width-max) {
-      background-image: url("../img/header-s3@2x.jpg");
+      background-image: url("../img/header-s@2x.jpg");
     }
   }
 }

@@ -1,4 +1,8 @@
 .header {
+  background-color: #fbfbfb;
+}
+
+.header__wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,8 +10,8 @@
   min-height: 80px;
   padding-top: 10px;
   padding-bottom: 10px;
-
-  background-color: #fbfbfb;
+  // padding-top: 16px;
+  // padding-bottom: 4px;
 }
 
 .header__logo {
@@ -29,6 +33,9 @@
 }
 
 .header__contacts-tel {
+  @media (min-width: $l-width) {
+    min-width: 160px;
+  }
   max-width: 200px;
   font-size: 18px;
   font-weight: 700;
@@ -36,17 +43,18 @@
 }
 
 .header__contacts-contact {
-  margin-left: 24px;
+  margin-left: 20px;
 }
 
 .header__contacts-contact a {
-  max-width: 200px;
+  width: 150px;
   margin-top: -2px;
-  padding: 2px 35px;
+  padding: 2px 20px;
 
   font-size: 16px;
   line-height: 40px;
   text-transform: none;
+  text-align: center;
 
   background-color: $brand-color;
 
@@ -57,18 +65,23 @@
 }
 
 @media (max-width: $m-width-max) {
-  .header {
+  .header__wrapper {
     position: relative; //Для меню
     height: 37px; //35, но на макете сверху 2 лишних пикселя
     min-height: auto;
 
     padding-top: 10px;
     padding-bottom: 5px;
+    // padding-top: 6px;
+    // padding-bottom: 9px;
+
 
     @media (min-width: $m-width) {
       max-width: 893px;
       padding-right: 65px;
       padding-left: 65px;
+      // padding-left: 42px;
+      // padding-right: 42px;
     }
   }
 
@@ -93,7 +106,9 @@
 }
 
 @media (max-width: $s-width-max) {
-  .header {
+  .header__wrapper {
+    // padding-top: 3px;
+    // padding-bottom: 10px;
     padding-top: 7px;
     padding-bottom: 6px;
   }
