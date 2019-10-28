@@ -158,18 +158,17 @@
   var moveDescription = function () {
     var descriptionElem = document.querySelector('.description');
     var buttonsElem = document.querySelector('.main-header__buttons-container');
-    var advantagesElem = document.querySelector('.advantages');
-    var newParentDiv = advantagesElem.parentNode;
+    var headerElem = document.querySelector('.main-header');
     var oldParentDiv = buttonsElem.parentNode;
+    var newParentDiv = document.querySelector('.main');
 
     // Заменяющий параграф
     var substitute = '<p class="main-header__description-substitute">Работаем на российском рынке с&nbsp;<b>1992</b>&nbsp;года</p>';
 
-    if (descriptionElem && buttonsElem && advantagesElem) {
+    if (descriptionElem && buttonsElem && headerElem) {
       if (window.matchMedia('(max-width: 767px)').matches && oldParentDiv.contains(descriptionElem)) {
         // Перемещаем блок
-        newParentDiv.insertBefore(descriptionElem, advantagesElem);
-        // advantagesElem.before(descriptionElem);
+        newParentDiv.insertBefore(descriptionElem, headerElem.nextSibling);
         // Меняем классы
         descriptionElem.classList.remove('main-header__description');
         descriptionElem.classList.add('wrapper');
@@ -222,4 +221,3 @@
     servicesLink.addEventListener('click', handleAnchorClick);
   }
 })();
-
