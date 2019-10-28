@@ -17,7 +17,13 @@
 }
 
 .menu__item {
-  margin-right: 24px;
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &:last-child {
+    margin-right: 10px;
+  }
 }
 
 .menu__link {
