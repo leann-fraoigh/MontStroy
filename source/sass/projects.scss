@@ -1,16 +1,125 @@
-.projects__list li {
+$background-overlay--futur: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+$background-overlay--oreol: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+$background-overlay--semejny: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+$background-overlay--medial: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
+$background-overlay--energo: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+$background-overlay--buratino: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+$link-background-overlay: linear-gradient(rgba(225, 225, 225, 0.1), rgba(225, 225, 225, 0.1));
+
+.projects {
+  @media (min-width: $l-width) {
+    @include line;
+  }
+}
+
+.projects h2 {
+  margin-bottom: 34px;
+  // margin-left: 4px;
+}
+
+.projects__list {
+  @include reset-list-style;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-left: -3px;
+
+  overflow: hidden;
+}
+
+.projects__item {
   position: relative;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-height: 227px;
+  margin-left: 3px;
+  margin-bottom: 4px;
+  padding: 30px 80px 33px 30px;
+
   color: $light-color;
+
   background-color: $middle-gray;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/header-s@1x.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (min-width: $l-width) {
+    &:nth-child(-n+4) {
+      flex-basis: 20%;
+      padding-right: 15px;
+
+      & h3 {
+        // margin-bottom: 47px;
+        min-height: 47px;
+        margin-top: 23px;
+        margin-bottom: 24px;
+
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+
+    &:nth-last-child(-n+2) {
+      flex-basis: 40%;
+    }
+
+    &--futur {
+      background-image: $background-overlay--futur, url('../img/staduim-l@1x.jpg');
+      background-position-x: 100%;
+    }
+
+    &--oreol {
+      background-image: $background-overlay--oreol, url('../img/business-l@1x.jpg');
+      background-position-x: 28%;
+    }
+
+    &--semejny {
+      background-image: $background-overlay--semejny, url('../img/movie-l@1x.jpg');
+      background-position-x: 51%;
+    }
+
+    &--medial {
+      background-image: $background-overlay--medial, url('../img/media-l@1x.jpg');
+      background-position-x: 50%;
+    }
+
+    &--energo {
+      background-image: $background-overlay--energo, url('../img/energo-l@1x.jpg');
+      background-position-x: 23.5%;
+    }
+
+    &--buratino {
+      background-image: $background-overlay--buratino, url('../img/buratino-l@1x.jpg');
+    }
+  }
+}
+
+.projects__list h3 {
+  margin-top: 10px;
+  margin-bottom: 32px;
+
+  font-size: 32px;
+  line-height: 42px;
+  text-transform: none;
 }
 
 .projects__list p {
+  @media (min-width: $l-width) {
+    margin-bottom: 0;
+  }
   line-height: 22px;
+}
+
+.projects__list svg {
+  fill: $light-color-transparent;
 }
 
 .projects__list .button {
   position: absolute;
-  right: 10px;
+  right: 11px;
   bottom: 10px;
   width: 42px;
   height: 30px;
@@ -18,9 +127,13 @@
   border-width: 2px;
   border-color: $light-color-transparent;
 
-  background-image: url("../img/arrow-right.svg");
-  background-position: center;
-  background-repeat: no-repeat;
+  // background-image: url("../img/arrow-right.svg");
+  // background-position: 13px center;
+  // background-repeat: no-repeat;
+  // color: rgba(255, 255, 255, 0.34)
+
+  line-height: 25px;
+
 
   &:hover,
   &:focus {
@@ -28,6 +141,248 @@
 
     & svg {
       fill: #000000;
+    }
+  }
+}
+
+@media (max-width: $m-width-max) {
+  .projects h2 {
+    margin-left: 0;
+    margin-bottom: 31px;
+  }
+
+  .projects__list {
+    flex-direction: column;
+  }
+
+  .projects__item {
+    flex-basis: 90%;
+    flex-shrink: 1;
+    min-height: 132px;
+    margin-bottom: 10px;
+    padding-right: 90px;
+    // padding-top: 33px;
+    padding-right: 85px;
+    padding-left: 43px;
+    padding-bottom: 18px;
+
+    &--futur {
+      background-image: $background-overlay--futur, url('../img/staduim-m@1x.jpg');
+    }
+
+    &--oreol {
+      background-image: $background-overlay--oreol, url('../img/business-m@1x.jpg');
+    }
+
+    &--semejny {
+      background-image: $background-overlay--semejny, url('../img/movie-m@1x.jpg');
+    }
+
+    &--medial {
+      background-image: $background-overlay--medial, url('../img/media-m@1x.jpg');
+      background-position-x: 46%;
+    }
+
+    &--energo {
+      background-image: $background-overlay--energo, url('../img/energo-m@1x.jpg');
+      background-position-x: 82%;
+    }
+
+    &--buratino {
+      background-image: $background-overlay--buratino, url('../img/buratino-m@1x.jpg');
+    }
+  }
+
+  .projects__item a {
+    &:hover,
+    &:focus {
+      background-image: $link-background-overlay;;
+    }
+  }
+
+  .projects__list h3 {
+    min-height: 32px;
+    margin-bottom: 11px;
+
+    font-size: 24px;
+    line-height: normal;
+    font-weight: 700;
+  }
+
+  .projects__list p {
+    margin-top: 11px;
+    margin-bottom: 11px;
+
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.66);
+  }
+
+  .projects__list span {
+    display: none;
+  }
+
+  .projects__list .button {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .projects__list svg {
+    display: none;
+  }
+}
+
+@media (max-width: $s-width-max) {
+  .projects h2 {
+    margin-bottom: 2px;
+  }
+
+  .projects__item {
+    display: flex;
+
+    align-items: center;
+    min-height: 68px;
+    padding: 16px;
+  }
+
+  .projects__item {
+    &--futur {
+      background-image: $background-overlay--futur, url('../img/staduim-s@1x.jpg');
+      background-position-x: 0px;
+    }
+
+    &--oreol {
+      background-image: $background-overlay--oreol, url('../img/business-s@1x.jpg');
+    }
+
+    &--semejny {
+      background-image: $background-overlay--semejny, url('../img/movie-s@1x.jpg');
+      background-position-x: 5%;
+    }
+
+    &--medial {
+      background-image: $background-overlay--medial, url('../img/media-s@1x.jpg');
+      background-position-x: 47%;
+    }
+
+    &--energo {
+      background-image: $background-overlay--energo, url('../img/energo-s@1x.jpg');
+      background-position-x: 42%;
+    }
+
+    &--buratino {
+      background-image: $background-overlay--buratino, url('../img/buratino-s@1x.jpg');
+      background-position-x: -10%;
+    }
+  }
+
+  .projects__list h3 {
+    flex-grow: 1;
+    margin-top: 22px;
+
+    font-family: 'Raleway', Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .projects__list p {
+    display: none;
+  }
+}
+
+
+@media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+  .projects__item {
+    // &--futur {
+    //   background-image: $background-overlay--futur, url('../img/staduim-l@1x.jpg');
+    // }
+
+    &--oreol {
+      background-image: $background-overlay--oreol, url('../img/business-l@2x.jpg');
+    }
+
+    &--semejny {
+      background-image: $background-overlay--semejny, url('../img/movie-l@2x.jpg');
+    }
+
+    &--medial {
+      background-image: $background-overlay--medial, url('../img/media-l@2x.jpg');
+    }
+
+    &--energo {
+      background-image: $background-overlay--energo, url('../img/energo-l@2x.jpg');
+    }
+
+    &--buratino {
+      background-image: $background-overlay--buratino, url('../img/buratino-l@2x.jpg');
+    }
+  }
+  @media (max-width: $m-width-max) {
+    // background-image: url("../img/header-m@2x.jpg");
+    .projects__item {
+      &--futur {
+        background-image: $background-overlay--futur, url('../img/staduim-m@2x.jpg');
+      }
+
+      &--oreol {
+        background-image: $background-overlay--oreol, url('../img/business-m@2x.jpg');
+      }
+
+      &--semejny {
+        background-image: $background-overlay--semejny
+        , url('../img/movie-m@2x.jpg');
+      }
+
+      &--medial {
+        background-image: $background-overlay--medial, url('../img/media-m@2x.jpg');
+      }
+
+      &--energo {
+        background-image: $background-overlay--energo, url('../img/energo-m@2x.jpg');
+      }
+
+      &--buratino {
+        background-image: $background-overlay--buratino, url('../img/buratino-m@2x.jpg');
+      }
+    }
+  }
+
+  @media (max-width: $s-width-max) {
+    // background-image: url("../img/header-s@2x.jpg");
+    .projects__item {
+      &--futur {
+        background-image: $background-overlay--futur, url('../img/staduim-s@2x.jpg');
+      }
+
+      &--oreol {
+        background-image: $background-overlay--oreol, url('../img/business-s@2x.jpg');
+      }
+
+      &--semejny {
+        background-image: $background-overlay--semejny, url('../img/movie-s@2x.jpg');
+      }
+
+      &--medial {
+        background-image: $background-overlay--medial, url('../img/media-s@2x.jpg');
+      }
+
+      &--energo {
+        background-image: $background-overlay--energo, url('../img/energo-s@2x.jpg');
+      }
+
+      &--buratino {
+        background-image: $background-overlay--buratino, url('../img/buratino-s@2x.jpg');
+      }
     }
   }
 }
