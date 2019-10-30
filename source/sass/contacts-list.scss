@@ -1,0 +1,72 @@
+.contacts-list {
+  margin-top: 44px;
+
+  font-size: 16px;
+  line-height: 28px; //Вопреки данным макета
+}
+
+.contacts-list__item svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: $brand-color;
+}
+
+.contacts-list__item {
+  position: relative;
+
+  margin-right: -8px;
+  margin-bottom: 38px;
+  padding-left: 30px;
+
+  &--address svg {
+    left: 2px;
+    top: 6px
+  }
+
+  &--email svg {
+    top: 9px;
+  }
+
+  &--tel svg {
+    left: 1px;
+    top: 2px;
+    line-height: 20px;
+  }
+}
+
+.contacts-list__item span {
+    font-size: 13px;
+    // line-height: 45px;
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contacts-list a[href^="tel:"] {
+  font-weight: 700;
+
+}
+  .contacts-list a[href^="mailto:"] {
+  font-weight: 700;
+}
+
+
+@media (max-width: $m-width-max) {
+  .contacts-list {
+    font-size: 14px;
+    line-height: 26px;
+  }
+
+  .contacts-list__item span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: $s-width-max) {
+  .contacts-list {
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
