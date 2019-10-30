@@ -1,0 +1,22 @@
+.swiper-pagination {
+  bottom: -10px;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: $brand-color;
+}
+
+@media (max-width: $m-width-max) {
+  // .swiper-slide {
+  //   width: 280px;
+  //   height: 200px;
+  // }
+  // .swiper-slide-active {
+  //   // width: 280px;
+  //   // height: 200px;
+  // }
+  // .swiper-slide-active a {
+  //   opacity: 1;
+  // }
+}
+
