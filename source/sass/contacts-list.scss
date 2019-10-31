@@ -1,8 +1,10 @@
 .contacts-list {
-  margin-top: 44px;
-
   font-size: 16px;
   line-height: 28px; //Вопреки данным макета
+
+  &--shadow {
+    display: none;
+  }
 }
 
 .contacts-list__item svg {
@@ -55,7 +57,17 @@
 @media (max-width: $m-width-max) {
   .contacts-list {
     font-size: 14px;
-    line-height: 26px;
+    line-height: 29px; // Хотя в макете сказано что 26
+  }
+
+  // .contacts-list__item {
+  //   margin-bottom: 36px;
+  // }
+
+  .contacts-list__item {
+    &--tel {
+      line-height: 19px;
+    }
   }
 
   .contacts-list__item span {
@@ -65,8 +77,85 @@
 
 @media (max-width: $s-width-max) {
   .contacts-list {
-    font-size: 16px;
-    line-height: 26px;
-    color: rgba(255, 255, 255, 0.6);
+    margin-top: 6px;
+    padding-bottom: 18px;
+
+    font-size: 14px;
+    line-height: 20px;
+    // color: rgba(255, 255, 255, 0.6);
+  }
+
+  .contacts-list a[href^="tel:"] {
+  font-weight: 400;
+
+}
+  .contacts-list a[href^="mailto:"] {
+  font-weight: 400;
+}
+
+  .contacts-list__item {
+    margin-top: 12px;
+    margin-bottom: auto;
+
+    &--address svg {
+      left: 0px;
+      top: 2px
+    }
+
+    &--email svg {
+      top: 5px;
+    }
+
+    &--tel svg {
+      left: 0;
+      top: 1px;
+      line-height: 20px;
+    }
+  }
+
+  .contacts-list__item a {
+    font-weight: 400;
+  }
+
+  //Копия
+  .contacts-list--shadow {
+    display: block;
+    min-width: auto;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+
+    line-height: 29px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    & svg {
+      fill: rgba(255, 255, 255, 0.5);
+    }
+
+    & a {
+      &:hover,
+      &:focus {
+        color: $light-color;
+      }
+    }
+
+    & .contacts-list__item {
+      & a {
+        font-weight: 700;
+      }
+
+      &--address svg {
+        top: 6px;
+      }
+
+      &--email svg {
+        top: 9px
+      }
+
+      &--tel {
+        margin-top: 22px;
+      }
+    }
   }
 }

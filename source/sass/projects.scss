@@ -148,9 +148,13 @@ $link-background-overlay: linear-gradient(rgba(225, 225, 225, 0.1), rgba(225, 22
 }
 
 @media (max-width: $m-width-max) {
+  .projects {
+    margin-bottom: 64px;
+  }
+
   .projects h2 {
     margin-left: 0;
-    margin-bottom: 64px;
+    margin-bottom: 31px;
   }
 
   .projects__list {

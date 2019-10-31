@@ -9,13 +9,16 @@
 .social__item {
   display: inline-block;
   line-height: 0;
+  vertical-align: middle;
 
   &:not(:last-child) {
     margin-right: 18px;
   }
 
   &--tw {
-    margin-left: 5px;
+    @media (min-width: $l-width) {
+      margin-left: 5px;
+    }
   }
 
   &--fb {
@@ -27,7 +30,7 @@
   fill: $middle-gray;
 }
 
-.social__item a {
+.social__link {
   // display: inline-block;
   display: flex;
   justify-content: center;
@@ -36,9 +39,95 @@
   width: 35px;
   height: 35px;
 
+  &--vk svg {
+    width: 35px;
+    height: 35px;
+    // margin-top: -6px;
+  }
+
+  &--tw svg {
+    width: 29px;
+    height: 29px;
+  }
+
   &:hover svg,
   &:focus svg {
     fill: $light-color;
+  }
+}
+
+@media (max-width: $m-width-max) {
+
+  .social__list {
+    margin-top: 7px;
+    margin-right: -7px;
+  }
+
+  .social__item {
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+
+    vertical-align: middle;
+  }
+
+  .social__link {
+    width: 26px;
+    height: 26px;
+
+    &--vk svg {
+      width: 22px;
+      height: 22px;
+      // margin-top: -6px;
+    }
+
+    &--tw svg {
+      width: 22px;
+      height: 18px;
+    }
+
+    &--fb svg {
+      width: 8px;
+      height: 16px;
+    }
+  }
+}
+
+@media (max-width: $m-width-max) {
+  .social__list {
+    // margin-top: 7px;
+    margin-right: -11px;
+  }
+
+  .social__item {
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+  }
+
+  .social__item--fb {
+    margin-left: -11px;
+  }
+
+  .social__link {
+    width: 40px;
+    height: 40px;
+
+    &--vk svg {
+      width: 40px;
+      height: 40px;
+      margin-top: 6px;
+    }
+
+    &--tw svg {
+      width: 39px;
+      height: 32px;
+    }
+
+    &--fb svg {
+      width: 13px;
+      height: 40px;
+    }
   }
 }
 

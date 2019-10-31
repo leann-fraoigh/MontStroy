@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
 /* eslint-disable no-shadow */
 /* eslint-disable consistent-return */
 /* eslint-disable no-undefined */
@@ -305,8 +307,8 @@
         slideShadows: false,
         pagination: {
           el: '.swiper-pagination',
-          dynamicBullets: true,
-          clickable: true,
+          dynamicBullets: true
+          // clickable: true,
         },
       }
     });
@@ -333,14 +335,15 @@
       spaceBetween: 30,
       pagination: {
         el: '.swiper-pagination',
-        dynamicBullets: true,
-        clickable: true,
+        dynamicBullets: true
+        // clickable: true,
       },
     });
   };
 
   var destroySwiper = function () {
     swiper.destroy(true, true);
+    swiper = undefined;
   };
 
   var changeSwiper = function () {
@@ -358,7 +361,7 @@
       if (swiper !== undefined) {
         destroySwiper();
       }
-      // initSwiperS();
+      initSwiperS();
     }
   };
 
@@ -371,14 +374,27 @@
   var changeText = function () {
     var element = document.querySelector('.partners h2');
     if (element) {
-      if (window.matchMedia('(max-width: 1023px)').matches) {
+      if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
         element.innerHTML = 'Наши партнеры';
       } else {
         element.innerHTML = 'Партнеры';
       }
     }
   };
-
   window.addEventListener('resize', changeText);
   changeText();
+})();
+
+
+// КЛОНИРОВАНИЕ БЛОКА МЕНЮ
+(function () {
+  var contactsElem = document.querySelector('.contacts-list');
+  var newSibling = document.querySelector('.social');
+  var newParentDiv = document.querySelector('.footer__container');
+
+  if (contactsElem && newSibling && newParentDiv) {
+    var newContactsElem = contactsElem.cloneNode(true);
+    newParentDiv.insertBefore(newContactsElem, newSibling);
+    newContactsElem.classList.add('contacts-list--shadow');
+  }
 })();
