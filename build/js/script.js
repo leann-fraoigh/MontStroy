@@ -302,6 +302,7 @@
       grabCursor: true,
       centeredSlides: true,
       slidesPerView: 'auto',
+      // spaceBetween: -10,
       coverflowEffect: {
         // visibilityFullFit: true,
         // cssWidthAndHeight: true,
@@ -309,21 +310,21 @@
         // loop: true,
         rotate: 0,
         stretch: 0.22,
-        depth: 150,
+        depth: 250,
         modifier: 1,
         slideShadows: false,
-        pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true,
-          // clickable: true,
-        },
-      }
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        // clickable: true,
+      },
     });
   };
 
   var initSwiperL = function () {
     swiper = new Swiper('.swiper-container', {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 30,
       // pagination: {
       //   el: '.swiper-pagination',
@@ -338,7 +339,8 @@
 
   var initSwiperS = function () {
     swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
+      slidesPerView: 'auto',
+      // centeredSlides: true,
       spaceBetween: 30,
       pagination: {
         el: '.swiper-pagination',
@@ -358,7 +360,7 @@
       if (swiper !== undefined) {
         destroySwiper();
       }
-      // initSwiperL();
+      initSwiperL();
     } else if (window.matchMedia('(max-width: 767px)').matches) {
       if (swiper !== undefined) {
         destroySwiper();

@@ -1,5 +1,29 @@
+.swiper-container {
+  position: relative;
+}
+
+@media (min-width: $l-width) {
+  .swiper-pagination {
+    display: none;
+  }
+}
+
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: $brand-color;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  left: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  // position: absolute;
+  top: -63px;
+
+  &::after {
+    display: none;
+  }
 }
 
 @media (max-width: $m-width-max) {
@@ -8,15 +32,26 @@
   }
 
   .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-    left: 44%;
+    left: 49.5%;
   }
 
   .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0px 2px;
-}
+  }
 }
 
-@media (max-width: $m-width-max) {
+@media (max-width: $s-width-max) {
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 6px;
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    left: 46%;
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px 2px;
+  }
   // .swiper-slide {
   //   width: 280px;
   //   height: 200px;
