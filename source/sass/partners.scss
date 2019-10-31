@@ -231,18 +231,26 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
 
     &--ava a {
       background-image: url('../img/ava-bw-l@2x.png');
+      background-position: center;
+      background-size: contain;
     }
 
     &--mirror a {
       background-image: url('../img/mirror-bw-l@2x.png');
+      background-position: center;
+      background-size: contain;
     }
 
     &--shield a {
       background-image: url('../img/shield-bw-l@2x.png');
+      background-position: center;
+      background-size: contain;
     }
 
     &--ntf a {
       background-image: url('../img/ntf-bw-l@2x.png');
+      background-position: center;
+      background-size: contain;
     }
   }
 }
