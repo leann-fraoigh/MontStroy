@@ -249,6 +249,9 @@ $link-background-overlay: linear-gradient(rgba(225, 225, 225, 0.1), rgba(225, 22
 }
 
 @media (max-width: $s-width-max) {
+  .projects {
+    margin-bottom: 22px;
+  }
   .projects h2 {
     margin-bottom: 2px;
   }

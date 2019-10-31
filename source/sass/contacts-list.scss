@@ -30,10 +30,13 @@
     top: 9px;
   }
 
-  &--tel svg {
-    left: 1px;
-    top: 2px;
+  &--tel {
     line-height: 20px;
+
+    & svg {
+      left: 1px;
+      top: 2px;
+    }
   }
 }
 
@@ -103,7 +106,7 @@
     }
 
     &--email svg {
-      top: 5px;
+      top: 4px;
     }
 
     &--tel svg {
@@ -123,7 +126,7 @@
     min-width: auto;
     margin-right: 0;
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 2px;
 
     line-height: 29px;
 

@@ -155,6 +155,13 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
 }
 
 @media (max-width: $m-width-max) {
+  .partners {
+    margin-bottom: 48px;
+  }
+
+  .partners h2 {
+    margin-bottom: 16px;
+  }
   .partners__list-button {
     display: none;
   }
@@ -164,45 +171,59 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
     border: none;
     }
 
-    width: 280px;
+    flex-basis: 280px;
+    height: 200px;
     // height: 200px;
+    flex-shrink: 0;
 
     box-shadow: 0px 10px 18px 2px rgba(0, 0, 0, 0.05);
+
+    @media (min-width: $m-width) {
+      &--ava a {
+        background-image: url('../img/ava-bw-l@1x.png');
+        background-position-x: 33%;
+        background-size: 200px;
+      }
+
+      &--mirror a {
+        background-image: url('../img/mirror-bw-l@1x.png');
+        background-size: 180px;
+        background-position-y: 26px;
+      }
+
+      &--shield a {
+        background-image: url('../img/shield-bw-l@1x.png');
+        background-position: center;
+        background-size: 236px;
+      }
+      &--ntf a {
+        background-image: url('../img/ntf-bw-l@1x.png');
+        background-position: center;
+      }
+    }
+  }
+}
+
+@media (max-width: $s-width-max) {
+  .partners {
+    margin-bottom: 16px;
   }
 
-//   .partners__pagination {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
+  .partners h2 {
+    margin-bottom: 4px;
+  }
 
-//     margin-top: 6px;
-//     margin-left: -5px;
-//   }
+  .partners__item {
+    flex-basis: 280px; // for swiper
+    flex-shrink: 0; // for wiper
+    height: auto; // for swiper
 
-//   .partners__pagination {
-//     width: 6px;
-//     height: 6px;
-//     padding: 0;
-//     margin: 0;
-//     margin-left: 5px;
-
-//     border-color: $lightest-gray;
-//     border-radius: 50%;
-//     background-color: $lightest-gray;
-
-//     &:hover,
-//     &:focus,
-//     &--selected {
-//       width: 8px;
-//       height: 8px;
-//       border-color: $brand-color;
-//       background-color: $brand-color;
-//     }
-
-//     &:active {
-//       opacity: 0.5;
-//     }
-//   }
+    &--ava a {
+    background-image: url(../img/ava-bw-l@1x.png);
+    background-position-x: 40%;
+    background-position-y: 2px;
+    }
+  }
 }
 
 @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {

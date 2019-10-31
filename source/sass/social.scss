@@ -93,15 +93,15 @@
   }
 }
 
-@media (max-width: $m-width-max) {
+@media (max-width: $s-width-max) {
   .social__list {
-    // margin-top: 7px;
+    margin-top: 10px;
     margin-right: -11px;
   }
 
   .social__item {
     &:not(:last-child) {
-      margin-right: 22px;
+      margin-right: 24px;
     }
   }
 
