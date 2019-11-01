@@ -132,14 +132,16 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
+      outline: none;
       &::before {
         border-top-color: $dark-color;
       }
     }
 
-    &:hover + h3,
-    &:focus  + h3 {
+    &:hover + div h3,
+    &:focus  + div h3 {
       position: relative;
       z-index: 10;
 
