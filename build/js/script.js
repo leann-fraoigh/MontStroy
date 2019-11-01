@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
 /* eslint-disable no-shadow */
@@ -401,3 +402,13 @@
     newContactsElem.classList.add('contacts-list--shadow');
   }
 })();
+
+// МАСКА ДЛЯ ПОЛЯ ТЕЛЕФОНА
+
+var telInput = document.getElementById('customer-phone');
+
+var maskOptions = {
+  mask: '+{7}(000)000-00-00'
+};
+// eslint-disable-next-line no-undef
+var mask = IMask(telInput, maskOptions);
