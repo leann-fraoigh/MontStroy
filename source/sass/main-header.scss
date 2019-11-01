@@ -32,23 +32,29 @@
 }
 
 .main-header__buttons-container {
-  margin-left: -14px;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: 53px;
+  margin-left: -19px;
 }
 
 .main-header__button {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  width: 302px;
-  margin-top: 29px;
-  padding: 7px 30px;
+  width: 300px;
+
+  margin-bottom: 10px;
+  margin-left: 19px;
+  padding: 17px 30px;
 
   font-size: 20px;
-  line-height: 40px;
   font-weight: 900;
 
-  // &:not(:last-of-type) {
-  //   margin-right: 14px;
-  // }
-  margin-left: 14px;
+  overflow: hidden;
 
   &:hover,
   &:focus {
@@ -68,9 +74,8 @@
 }
 
 
-
 .main-header__advantages {
-  margin-top: 115px;
+  margin-top: 106px;
 }
 
 @media (max-width: $m-width-max) {
@@ -83,7 +88,7 @@
   }
   .main-header__wrapper {
     padding-top: 100px;
-    padding-bottom: 130px;
+    padding-bottom: 120px;
 
     @media (min-width: $m-width) {
       padding-left: 84px;
@@ -98,38 +103,17 @@
     }
   }
 
-  // .main-header__description {
-  //   max-width: 700px;
-  //   font-size: 16px;
-  //   line-height: normal;
-  //   font-weight: 400;
-  // }
-
   .main-header__buttons-container {
-    margin-left: -16px;
+    margin-top: 85px;
   }
 
   .main-header__button {
     width: 290px;
-    margin-top: 70px;
     padding: 14px 30px;
 
     font-size: 16px;
     line-height: 26px;
-
-    // &:not(:last-of-type) {
-    //   margin-right: 16px;
-    // }
-    margin-left: 16px;
   }
-
-  // .main-header__advantages {
-  //   position: absolute;
-  //   left: 0;
-  //   bottom: -300px;
-  //   margin-top: 10px; //temp
-
-  // }
 }
 
 @media (max-width: $s-width-max) {
@@ -144,29 +128,25 @@
 
   .main-header__wrapper {
     padding-top: 117px;
-    padding-bottom: 52px;
+    padding-bottom: 42px;
   }
 
   .main-header__buttons-container {
+    flex-direction: column;
+    margin-top: 58px;
     margin-left: 0;
   }
 
   .main-header__button {
     display: block;
     width: 280px;
-    // margin-right: 16px;
     margin-left: auto;
     margin-right: auto;
     padding: 16px 15px;
 
-    &:first-of-type {
-      margin-top: 58px;
-      margin-bottom: 10px;
-    }
-
-    &:not(:first-of-type) {
-      margin-top: 0;
-    }
+    // &:not(:first-of-type) {
+    //   margin-top: 0;
+    // }
   }
 
   .main-header h1 {
