@@ -302,7 +302,6 @@
       grabCursor: true,
       centeredSlides: true,
       slidesPerView: 'auto',
-      // spaceBetween: -10,
       coverflowEffect: {
         // visibilityFullFit: true,
         // cssWidthAndHeight: true,
