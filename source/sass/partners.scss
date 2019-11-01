@@ -12,7 +12,7 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
   }
   margin-top: 50px;
   margin-bottom: 62px;
-  spaceBetween: -10,
+  // spaceBetween: -10,
 }
 
 .partners__container {
@@ -21,7 +21,7 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
     justify-content: stretch;
   }
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 
