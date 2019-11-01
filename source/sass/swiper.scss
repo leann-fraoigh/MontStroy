@@ -16,6 +16,16 @@
   left: auto;
 }
 
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
+
+  &:hover {
+    background-color: $brand-color;
+  }
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   // position: absolute;
