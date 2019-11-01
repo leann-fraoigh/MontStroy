@@ -17,7 +17,8 @@
   flex-wrap: wrap;
   flex-direction: row;
 
-  margin-left: -45px;
+  // margin-left: -45px;
+  margin-left: -44px;
 }
 
 .services__item {
@@ -31,6 +32,7 @@
   }
   min-height: 500px;
   margin-left: 45px;
+  // margin-left: 45px;
   margin-bottom: 44px;
   padding: 20px 50px 16px 44px;
 
@@ -60,7 +62,7 @@
   font-size: 13px;
   color: $dark-gray;
   line-height: normal;
-  // line-height: 13px;
+  // line-height: 13px; // ???
   text-decoration-color: rgba(51, 51, 51, 0.3);
 }
 
@@ -77,27 +79,22 @@
     display: block;
 
     margin-left: -20px;
-
-    columns: 2;
-    column-gap: 0;
-    column-fill: balance;
-    // flex-direction: column;
-
-    // max-height: 200px;
+    @media (min-width: $m-width) {
+      columns: 2;
+      column-gap: 0;
+      column-fill: balance;
+    }
   }
-
 
   .services__item h3 {
     display: flex;
     align-items: center;
 
-    height: 50px; //Для IE
+    // height: 50px; //Для IE
     min-height: 46px;
     margin-bottom: auto;
     margin-top: 0;
     padding-left: 21px;
-    // padding-top: 16px;
-    // padding-bottom: 12px;
     padding-top: 2px;
     padding-bottom: 0px;
     padding-right: 35px;
@@ -121,7 +118,6 @@
     display: block;
     width: 16px;
     height: 16px;
-    // background-color: royalblue;
 
     &::before {
       content: "";
@@ -148,18 +144,18 @@
       z-index: 10;
 
       box-shadow: 0px 2px 6.3px 0.7px rgba(0, 255, 216, 0.65), inset 0px 2px 6.3px 0.7px rgba(0, 255, 216, 0.65);
-      // box-shadow: inset 0px 2px 6.3px 0.7px rgba(0, 255, 216, 0.65);
       border: solid 1px $brand-color;
     }
   }
 
   .services__item {
-    // flex-basis: 40%;
     position: relative;
-
-    // display: inline-block;
-    display: block;
-    // box-sizing: border-box;
+    @media (min-width: $m-width) {
+      display: inline-block;
+      width: 94.5%;
+    }
+    // display: block; // Так было в сданной версии
+    box-sizing: border-box;
     // width: 100%;
     min-height: auto;
     margin-left: 20px;
@@ -177,7 +173,7 @@
         }
       }
       & .services__sublist {
-        display: inline-block;
+        display: inline-block; //Чтобы не дробилось с колонки на колонку. КАк было в сданой версии
       }
       .button::before {
         border-top-color: $dark-color;
@@ -191,30 +187,49 @@
     }
   }
 
+  .services__item div {
+    display: flex;
+    // width: 100%;
+    // display: table;
+  }
+
+  .services__item h3 {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
   .services__sublist {
     display: none;
   }
 
   .services__sublist li {
+    // @media (min-width: $m-width) {
+    //   display: flex;
+    // }
     margin-bottom: 0;
-    width: 100%; // Для IE
-    box-sizing: border-box; // Для IE
+    // min-width: 100%; // Для IE
+    // min-width: 0; // Для IE
+    // width: 100%; // Для IE Это было
+    // box-sizing: border-box; // Для IE
   }
 
   .services__sublist a {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    box-sizing: border-box;
+    display: table;
     width: 100%;
-    height: 50px; // Для IE
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: center;
+    // flex-basis: 100%;
+    box-sizing: border-box;
     min-height: 46px;
     padding-left: 21px;
     padding-right: 50px;
-    // flex-basis: 100%;
-
+    @media (min-width: $m-width) {
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
     font-size: 14px;
-    // line-height: 1.86;
     line-height: 20px;
     color: $dark-color;
     vertical-align: middle;
@@ -234,6 +249,14 @@
     }
   }
 
+  .services__sublist a p {
+    display: table-cell;
+    vertical-align: middle;
+
+    margin-top: 2px;
+    margin-bottom: 3px;
+  }
+
   .services__sublist a span {
     display: none;
   }
@@ -241,7 +264,7 @@
 
 @media (max-width: $s-width-max) {
   .services {
-    margin-bottom: 33px;
+    margin-bottom: 42px;
   }
 
   .services h2 {
@@ -249,8 +272,8 @@
   }
 
   .services__list {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
 
     margin-left: -20px;
   }
@@ -273,7 +296,7 @@
 
     &--opened .services__sublist {
       display: block;
-      margin-top: 3px;
+      margin-top: 4px;
     }
   }
 
@@ -283,7 +306,7 @@
 
   .services__sublist a {
     // min-height: 39px;
-    min-height: 38px;
+    min-height: 40px;
 
     font-size: 12px;
     line-height: 17px;

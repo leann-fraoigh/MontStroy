@@ -7,7 +7,7 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 
-// МЕНЮ
+/* МЕНЮ */
 (function () {
   var menu = document.querySelector('.menu');
   var menuToggler = menu.querySelector('.menu__toggler');
@@ -105,7 +105,7 @@
   }
 })();
 
-// ПЕРЕМЕЩЕНИЕ БЛОКА ПРЕИМУЩЕСТВ
+/* ПЕРЕМЕЩЕНИЕ БЛОКА ПРЕИМУЩЕСТВ */
 (function () {
   var moveAdvantages = function () {
     var advantagesElem = document.querySelector('.advantages');
@@ -160,7 +160,7 @@
 //   })(args);
 // })();
 
-// ПЕРЕМЕЩЕНИЕ БЛОКА ОПИСАНИЯ
+/* ПЕРЕМЕЩЕНИЕ БЛОКА ОПИСАНИЯ */
 (function () {
   var moveDescription = function () {
     var descriptionElem = document.querySelector('.description');
@@ -201,7 +201,7 @@
   moveDescription();
 })();
 
-// ПРОКРУТКА
+/* ПРОКРУТКА */
 
 (function () {
   var headerConsultationLink = document.querySelector('.header__contacts-contact .button');
@@ -229,9 +229,9 @@
   }
 })();
 
-// ОБРЕЗКА КОНЦА СТРОКИ
+/* ОБРЕЗКА КОНЦА СТРОКИ */
 (function () {
-  var allLinks = document.querySelectorAll('.services__sublist a');
+  var allLinks = document.querySelectorAll('.services__sublist p');
 
   if (allLinks) {
     for (var i = 0; i < allLinks.length; i++) {
@@ -242,7 +242,7 @@
 })();
 
 
-// АККОРДЕОНЫ
+/* АККОРДЕОНЫ */
 (function () {
   var Enter = 13;
   var allButtons = document.querySelectorAll('.services__item button');
@@ -286,7 +286,7 @@
   }
 })();
 
-// SWIPER
+/* SWIPER */
 (function () {
   var swiper;
 
@@ -372,7 +372,7 @@
   changeSwiper();
 })();
 
-// ЗАМЕНА ТЕКСТА
+/* ЗАМЕНА ТЕКСТА */
 (function () {
   var changeText = function () {
     var element = document.querySelector('.partners h2');
@@ -389,7 +389,7 @@
 })();
 
 
-// КЛОНИРОВАНИЕ БЛОКА МЕНЮ
+/* КЛОНИРОВАНИЕ БЛОКА МЕНЮ */
 (function () {
   var contactsElem = document.querySelector('.contacts-list');
   var newSibling = document.querySelector('.social');
