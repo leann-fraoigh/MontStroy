@@ -220,23 +220,26 @@
         <h2>Контакты</h2>
         <div class="footer__map"></div>
         <section id="consultation" class="footer__form">
-          <h3>Свяжитесь с нами</h3>
+          <div class="footer__form-wrapper">
+            <h3>Свяжитесь с нами</h3>
           <form action="https://echo.htmlacademy.ru" method="POST" class="form">
-            <div class="form__field form__field--text">
-              <label for="customer-name" title="Ваше имя"></label>
-              <input id="customer-name" placeholder="Имя" type="text" name="name" required="">
-            </div>
-            <div class="form__field form__field--tel">
-              <label for="customer-phone" title="Ваш телефон"></label>
-              <input id="customer-phone" placeholder="Телефон" type="tel" name="phone" required="">
+            <div class="form__field-wrapper">
+              <div class="form__field form__field--text">
+                <label for="customer-name" title="Ваше имя">Имя</label>
+                <input id="customer-name" placeholder="" type="text" name="name" required="">
+              </div>
+              <div class="form__field form__field--tel">
+                <label for="customer-phone" title="Ваш телефон">Телефон</label>
+                <input id="customer-phone" placeholder="" type="tel" name="phone" required="">
+              </div>
             </div>
             <div class="form__field form__field--email">
-              <label for="customer-email" title="Ваш электронный адрес"></label>
-              <input id="customer-email" placeholder="E-mail" type="email" name="email" required="">
+              <label for="customer-email" title="Ваш электронный адрес">E-mail</label>
+              <input id="customer-email" placeholder="" type="email" name="email" required="">
               </div>
             <div class="form__field form__field--textarea">
-              <label for="customer-messsage" title="Ваше сообщение"></label>
-              <textarea id="customer-messsage" placeholder="Сообщение" name="messsage"></textarea>
+              <label for="customer-messsage" title="Ваше сообщение">Сообщение</label>
+              <textarea id="customer-messsage" placeholder="" name="messsage"></textarea>
             </div>
             <div class="form__conditions">
               <p>Заполняя форму на сайте, вы соглашаетесь с нашей</p>
@@ -244,6 +247,7 @@
             </div>
             <button type="submit">Отправить</button>
           </form>
+          </div>
         </section>
         <div class="footer__contacts-list contacts-list">
           <p class="contacts-list__item contacts-list__item--address">

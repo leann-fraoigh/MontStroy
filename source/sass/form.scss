@@ -1,8 +1,17 @@
 .form {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 
+  flex-grow: 1;
   padding: 0 10px;
+
+  & label {
+    font-size: 20px;
+    // line-height: 2.5;
+    letter-spacing: 0.8px;
+    color: $dark-color;
+  }
 
 
   & input[type=text],
@@ -13,16 +22,15 @@
     width: 100%;
 
     // padding: 14px 18px 16px 0;
-    padding: 4px 0 15px;
-    color: $dark-color;
+    padding: 8px 0 2px;
     border: none;
     border-bottom: 1px solid rgba(225, 225, 225, .8);
     border-radius: 0;
 
-    color: $dark-color;
-    font-size: 20px;
-    line-height: 2.5;
-    letter-spacing: 0.8px;
+    // font-size: 20px;
+    // line-height: 2.5;
+    // letter-spacing: 0.8px;
+    // color: $dark-color;
 
     background-color: transparent;
 
@@ -30,14 +38,11 @@
       padding-bottom: 17px; // Ради PP!!!
     }
 
-    &::placeholder {
-      color: inherit;
-      // font-size: inherit;
-      // line-height: inherit;
-      // letter-spacing: inherit;
-      background-color: transparent;
-      opacity: 1;
-    }
+    // &::placeholder {
+    //   color: inherit;
+    //   background-color: transparent;
+    //   opacity: 1;
+    // }
 
     &:hover,
     &:focus {
@@ -47,18 +52,24 @@
 
   & textarea {
     resize: none;
-    height: 72px;
+    // height: 72px;
+    height: 30px;
+    // height: 16.5%;
   }
 
   & button {
     @include button;
 
-    min-width: 230px;
+    // min-width: 230px;
     max-width: 350px;
+    width: 53%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 33px;
-    margin-bottom: 20px;
+    // margin-top: 33px;
+    margin-top: 7.6%;
+    // margin-bottom: 20px;
+    margin-bottom: 4.6%;
+
     padding: 3px 4px 7px 8px;
 
     font-size: 25px;
@@ -81,41 +92,62 @@
   }
 }
 
-.form__field {
+.form__field-wrapper {
+  display: flex;
   flex-grow: 1;
+
+  // margin-bottom: ;
+}
+
+.form__field {
+  // flex-grow: 1;
   flex-shrink: 1;
 
   margin-right: 32px;
-  margin-bottom: 22px;
+  // margin-bottom: 10.5%;
 
-    &--text,
-    &--tel {
-      flex-basis: 34%;
+  // &--text {
+    // margin-bottom: 0;
+  // }
+
+  &--text,
+  &--tel {
+    flex-basis: 34%;
+    // margin-bottom: 0;
+    flex-grow: 1;
   }
 
   &--tel {
     margin-left: 10px;
+    // margin-bottom: 23.5%;
   }
 
-  &--email,
-  &--textarea {
-    flex-basis: 100%;
+  &--email {
+    flex-grow: 1;
   }
 
+  // &--email,
+  // &--textarea {
+  //   // flex-basis: 100%;
+  // }
+
   &--textarea {
-    margin-top: 7px;
-    margin-bottom: 12px;
+    // margin-top: 7px;
+    // margin-bottom: 12px;
+    margin-bottom: 3%;
   }
 }
 
 .form__conditions {
-  flex-basis: 100%;
+  // flex-basis: 100%;
 
   font-size: 12px;
   line-height: 1.5;
   // letter-spacing: normal;
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
+
+  margin-top: 0;
 }
 
 .form__conditions p {
@@ -143,21 +175,30 @@
     padding-right: 22px;
     padding-left: 24px;
 
+    & label {
+      font-size: 14px;
+      // line-height: 2.54;
+      letter-spacing: 0.56px;
+    }
+
     & input[type=text],
     & input[type=tel],
     & input[type=email],
     & textarea {
-      font-size: 14px;
-      line-height: 2.54;
-      letter-spacing: 0.56px;
+      // font-size: 14px;
+      // line-height: 2.54;
+      // letter-spacing: 0.56px;
+      flex-grow: 1;
+      padding-top: 2px;
     }
 
     & textarea {
-      height: 55px;
+      height: 24px;
       margin-bottom: -4px;
     }
 
     & button {
+
       min-width: 164px;
       max-width: 250px;
 
@@ -168,9 +209,13 @@
   }
 
   .form__field {
-    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+
+    // margin-bottom: 14px;
     margin-left: 21px;
     margin-right: 21px;
+    margin-bottom: 7%;
 
     &--text {
       flex-basis: 20%;
@@ -181,8 +226,9 @@
     }
 
     &--textarea {
+      flex-grow: 1;
       margin-top: 0;
-      margin-bottom: 0;
+      margin-bottom: 1%;
     }
   }
 
@@ -198,9 +244,12 @@
   }
 
   .form button {
-    min-width: 164px;
-    margin-top: 28px;
-    margin-bottom: 16px;
+    // min-width: 164px;
+    width: 40%;
+    // margin-top: 28px;
+    margin-top: 8%;
+    // margin-bottom: 16px;
+    margin-bottom: 5%;
     padding-top: 1px;
 
     box-shadow: none;
@@ -216,13 +265,14 @@
     & input[type=tel],
     & input[type=email],
     & textarea {
-      padding-bottom: 13px;
+      padding-bottom: 3px;
     }
   }
 
   .form__field {
     margin-right: 0;
     margin-left: 0;
+    margin-bottom: 22px;
 
 
     &--text {
@@ -233,6 +283,11 @@
     &--tel {
       flex-basis: 40%;
     }
+
+    &--textarea {
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
   }
 
   .form__conditions {
@@ -241,6 +296,6 @@
 
   .form button {
     margin-top: 32px;
-    margin-bottom: 38px;
+    margin-bottom: 26px;
   }
 }
