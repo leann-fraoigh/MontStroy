@@ -77,6 +77,8 @@
     margin: 0 8px; // на 2 меньше, чем по умолчанию
 
     svg {
+      margin-right: auto; // IE
+      margin-left: auto; // IE
       margin-bottom: 0;
       fill: rgba(0, 0, 0, 0.3); // Прозрачность второстепенных -- 0.3
     }
@@ -100,9 +102,11 @@
   }
 
   .advantages__item div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex; // IE
+    // flex-direction: column; // IE
+    // align-items: center; //IE
+    display: block; // IE
+    text-align: center; // IE
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 1;

@@ -10,6 +10,7 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
   @media (min-width: $l-width) {
     @include line;
 
+    overflow: hidden;
     position: relative;
 
     &::before {
@@ -111,13 +112,17 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
   justify-content: stretch;
   align-items: stretch;
 
-  flex-basis: 20%;
+  // flex-basis: 20%;
   flex-grow: 1;
-  flex-shrink: 1;
+  // flex-shrink: 1; // doesnt nork in IE
+  flex-shrink: 0; // For IE
 
-  min-height: 133px;
+  height: 135px;
   @media (min-width: $l-width) {
-    max-width: 270px;
+    max-width: 270px; // IE
+    min-width: 217px;
+    box-sizing: border-box;
+    // width: 270px; // IE
     // margin-left: 10px; // swiper
     margin-bottom: 30px;
   }
@@ -162,10 +167,10 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
     background-position-y: -23px;
   }
 
-  & a:hover,
-  & a:focus {
-    opacity: 1;
-  }
+  // & a:hover,
+  // & a:focus {
+  //   opacity: 1;
+  // }
 }
 
 @media (max-width: $m-width-max) {
@@ -227,10 +232,10 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
         border-color: transparent;
       }
 
-      & a:hover,
-      & a:focus {
-        opacity: 0.5;
-      }
+      // & a:hover,
+      // & a:focus {
+      //   opacity: 0.5;
+      // }
     }
   }
 }

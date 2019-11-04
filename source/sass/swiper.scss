@@ -65,7 +65,7 @@
   }
 
   .advantages__item.swiper-slide {
-    flex-shrink: 1;
+    // flex-shrink: 1;
     width: auto;
     height: auto;
     position: initial;
@@ -105,6 +105,10 @@
     bottom: -3px;
     white-space: nowrap;
 
+  }
+
+  .advantages__buttons.swiper-pagination.swiper-pagination-bullets {
+    bottom: 2px;
   }
 
   .partners__item.swiper-slide {

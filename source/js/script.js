@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 /* eslint-disable new-cap */
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
@@ -301,6 +302,8 @@
     swiper = new Swiper('.swiper-container', {
       effect: 'coverflow',
       grabCursor: true,
+      initialSlide: 1,
+      // loop: true,
       centeredSlides: true,
       slidesPerView: 'auto',
       coverflowEffect: {
@@ -326,6 +329,7 @@
     swiper = new Swiper('.swiper-container', {
       slidesPerView: 4,
       spaceBetween: 30,
+      centeredSlides: false,
       // pagination: {
       //   el: '.swiper-pagination',
       //   clickable: true,
@@ -373,6 +377,22 @@
   changeSwiper();
 })();
 
+// var toggleSwiperClasses = function (add) {
+//   var wrapper = document.querySelector('.advantages__list');
+//   var items = document.querySelectorAll('.advantages__item');
+//   if (add) {
+//     wrapper.classList.add('swiper-wrapper');
+//     for (var i = 0; i <= items.length; i++) {
+//       items[i].classList.add('swiper-slide');
+//     }
+//   } else {
+//     wrapper.classList.remove('swiper-wrapper');
+//     for (var i = 0; i <= items.length; i++) {
+//       items[i].classList.remove('swiper-slide');
+//     }
+//   }
+// };
+
 /* SWIPER для Преимуществ */
 (function () {
   var advantagesSwiper;
@@ -382,12 +402,12 @@
     advantagesSwiper = undefined;
   };
 
+
   var initAdvantagesSwiperS = function () {
     advantagesSwiper = new Swiper('.advantages__wrapper', {
-      // wrapperClass: 'advantages__list',
       slidesPerView: 'auto',
       initialSlide: 1,
-      centeredSlides: true,
+      // centeredSlides: true,
       spaceBetween: 30,
       pagination: {
         el: '.advantages__buttons',
@@ -399,69 +419,60 @@
 
   var initAdvantagesSwiperM = function () {
     advantagesSwiper = new Swiper('.advantages__wrapper', {
-      initialSlide: 1,
-      // spaceBetween: 30,
       effect: 'coverflow',
       grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 3,
+      initialSlide: 1,
       loop: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
       coverflowEffect: {
         // visibilityFullFit: true,
         // cssWidthAndHeight: true,
         // autoResize: false,
+        // loop: true,
         rotate: 0,
-        // stretch: 35,
-        // depth: 250,
-        depth: 100,
-        modifier: 2,
+        stretch: 0.22,
+        depth: 250,
+        modifier: 1,
         slideShadows: false,
       },
       pagination: {
-        el: '.advantages__buttons',
-        type: 'bullets',
+        el: '.swiper-pagination',
         // dynamicBullets: true,
         // clickable: true,
       },
-      on: {
-        slideChange: function () {
-          var currentIndex = advantagesSwiper.activeIndex;
-          var previousIndex = currentIndex - 1;
-          var nextIndex = currentIndex + 1;
-
-          // for (var i = 0; i <= advantagesSwiper.slides.length; i++) {
-          //   var currentItem = advantagesSwiper.slides[i];
-          //   if (i !== currentIndex && i !== previousIndex && i !== nextIndex) {
-          //     if (currentItem && !(currentItem.classList.contains('swiper-slide-hidden'))) {
-          //       currentItem.classList.add('swiper-slide-hidden');
-          //     } else {
-          //       if (currentItem.classList.contains('swiper-slide-hidden')) {
-          //         currentItem.classList.remove('swiper-slide-hidden');
-          //       }
-          //     }
-          //   }
-          // }
-          for (var i = 0; i <= advantagesSwiper.slides.length; i++) {
-            var currentItem = advantagesSwiper.slides[i];
-            currentItem.classList.add('nice');
-          }
-        }
-      },
     });
+
+
+    // var changeClasses = function () {
+    //   var slides = document.querySelectorAll('.advantages__item');
+    //   for (var i = 0; i <= slides.length; i++) {
+    //     var currentSlide = slides[i];
+    //     var zet = currentSlide.style.zIndex;
+    //     if (zet === 1 || zet !== -1) {
+    //       currentSlide.classList.remove('swiper-slide-hidden');
+    //     } else {
+    //       currentSlide.classList.add('swiper-slide-hidden');
+    //     }
+    //   }
+    // };
+
+    // advantagesSwiper.on('slideChangeTransitionEnd', changeClasses);
   };
 
   var changeAdvantagesSwiper = function () {
-    // Для планшета
-    if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+    // Для десктопа
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      if (advantagesSwiper !== undefined) {
+        destroyAdvantagesSwiper();
+      }
+      // Для планшета
+    } else if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
       if (advantagesSwiper !== undefined) {
         destroyAdvantagesSwiper();
       }
       initAdvantagesSwiperM();
-      // Для десктопа
-    } else if (window.matchMedia('(min-width: 1024px)').matches) {
-      if (advantagesSwiper !== undefined) {
-        destroyAdvantagesSwiper();
-      }
+
       // Для мобилки
     } else if (window.matchMedia('(max-width: 767px)').matches) {
       if (advantagesSwiper !== undefined) {
