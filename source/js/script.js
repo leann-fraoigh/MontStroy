@@ -63,48 +63,48 @@
 //   changeDescriptionText();
 // })();
 
-// Слайдер преимуществ
-(function () {
-  var Enter = 13;
-  var advantages = document.querySelector('.advantages');
-  var buttons = advantages.querySelectorAll('.button');
+// // Слайдер преимуществ
+// (function () {
+//   var Enter = 13;
+//   var advantages = document.querySelector('.advantages');
+//   var buttons = advantages.querySelectorAll('.button');
 
 
-  var selectItem = function (evt) {
-    evt.preventDefault();
-    if (evt.target.classList.contains('button--selected') !== true) {
-      // Меняются классы кнопок
-      // удалить старый
-      var prevButton = advantages.querySelector('.button--selected');
-      prevButton.classList.remove('button--selected');
-      // добавить новый
-      evt.target.classList.add('button--selected');
+//   var selectItem = function (evt) {
+//     evt.preventDefault();
+//     if (evt.target.classList.contains('button--selected') !== true) {
+//       // Меняются классы кнопок
+//       // удалить старый
+//       var prevButton = advantages.querySelector('.button--selected');
+//       prevButton.classList.remove('button--selected');
+//       // добавить новый
+//       evt.target.classList.add('button--selected');
 
-      // Меняются классы слайдов
-      // удалить старый
-      var prevItem = advantages.querySelector('.advantages__item--selected');
-      prevItem.classList.remove('advantages__item--selected');
-      // добавить новый
-      var currentButton = evt.target.id;
-      var selector = '.advantages__item:nth-child(' + currentButton + ')';
-      var currentItem = advantages.querySelector(selector);
-      currentItem.classList.add('advantages__item--selected');
-    }
-  };
-  if (advantages && buttons) {
-    for (var i = 0; i < buttons.length; i++) {
-      var button = buttons[i];
-      button.addEventListener('click', function (evt) {
-        selectItem(evt);
-      });
-      button.addEventListener('keydown', function (evt) {
-        if (evt.keyCode === Enter) {
-          selectItem(evt);
-        }
-      });
-    }
-  }
-})();
+//       // Меняются классы слайдов
+//       // удалить старый
+//       var prevItem = advantages.querySelector('.advantages__item--selected');
+//       prevItem.classList.remove('advantages__item--selected');
+//       // добавить новый
+//       var currentButton = evt.target.id;
+//       var selector = '.advantages__item:nth-child(' + currentButton + ')';
+//       var currentItem = advantages.querySelector(selector);
+//       currentItem.classList.add('advantages__item--selected');
+//     }
+//   };
+//   if (advantages && buttons) {
+//     for (var i = 0; i < buttons.length; i++) {
+//       var button = buttons[i];
+//       button.addEventListener('click', function (evt) {
+//         selectItem(evt);
+//       });
+//       button.addEventListener('keydown', function (evt) {
+//         if (evt.keyCode === Enter) {
+//           selectItem(evt);
+//         }
+//       });
+//     }
+//   }
+// })();
 
 /* ПЕРЕМЕЩЕНИЕ БЛОКА ПРЕИМУЩЕСТВ */
 (function () {
@@ -232,7 +232,7 @@
 
 /* ОБРЕЗКА КОНЦА СТРОКИ */
 (function () {
-  var allLinks = document.querySelectorAll('.services__sublist p');
+  var allLinks = document.querySelectorAll('.services__sublist a p');
 
   if (allLinks) {
     for (var i = 0; i < allLinks.length; i++) {
@@ -287,7 +287,7 @@
   }
 })();
 
-/* SWIPER */
+/* SWIPER для Партнеров */
 (function () {
   var swiper;
 
@@ -373,6 +373,109 @@
   changeSwiper();
 })();
 
+/* SWIPER для Преимуществ */
+(function () {
+  var advantagesSwiper;
+
+  var destroyAdvantagesSwiper = function () {
+    advantagesSwiper.destroy(true, true);
+    advantagesSwiper = undefined;
+  };
+
+  var initAdvantagesSwiperS = function () {
+    advantagesSwiper = new Swiper('.advantages__wrapper', {
+      // wrapperClass: 'advantages__list',
+      slidesPerView: 'auto',
+      initialSlide: 1,
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: '.advantages__buttons',
+        dynamicBullets: true,
+        // clickable: true,
+      },
+    });
+  };
+
+  var initAdvantagesSwiperM = function () {
+    advantagesSwiper = new Swiper('.advantages__wrapper', {
+      initialSlide: 1,
+      // spaceBetween: 30,
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      loop: true,
+      coverflowEffect: {
+        // visibilityFullFit: true,
+        // cssWidthAndHeight: true,
+        // autoResize: false,
+        rotate: 0,
+        // stretch: 35,
+        // depth: 250,
+        depth: 100,
+        modifier: 2,
+        slideShadows: false,
+      },
+      pagination: {
+        el: '.advantages__buttons',
+        type: 'bullets',
+        // dynamicBullets: true,
+        // clickable: true,
+      },
+      on: {
+        slideChange: function () {
+          var currentIndex = advantagesSwiper.activeIndex;
+          var previousIndex = currentIndex - 1;
+          var nextIndex = currentIndex + 1;
+
+          // for (var i = 0; i <= advantagesSwiper.slides.length; i++) {
+          //   var currentItem = advantagesSwiper.slides[i];
+          //   if (i !== currentIndex && i !== previousIndex && i !== nextIndex) {
+          //     if (currentItem && !(currentItem.classList.contains('swiper-slide-hidden'))) {
+          //       currentItem.classList.add('swiper-slide-hidden');
+          //     } else {
+          //       if (currentItem.classList.contains('swiper-slide-hidden')) {
+          //         currentItem.classList.remove('swiper-slide-hidden');
+          //       }
+          //     }
+          //   }
+          // }
+          for (var i = 0; i <= advantagesSwiper.slides.length; i++) {
+            var currentItem = advantagesSwiper.slides[i];
+            currentItem.classList.add('nice');
+          }
+        }
+      },
+    });
+  };
+
+  var changeAdvantagesSwiper = function () {
+    // Для планшета
+    if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+      if (advantagesSwiper !== undefined) {
+        destroyAdvantagesSwiper();
+      }
+      initAdvantagesSwiperM();
+      // Для десктопа
+    } else if (window.matchMedia('(min-width: 1024px)').matches) {
+      if (advantagesSwiper !== undefined) {
+        destroyAdvantagesSwiper();
+      }
+      // Для мобилки
+    } else if (window.matchMedia('(max-width: 767px)').matches) {
+      if (advantagesSwiper !== undefined) {
+        destroyAdvantagesSwiper();
+      }
+      initAdvantagesSwiperS();
+    }
+  };
+
+  window.addEventListener('resize', changeAdvantagesSwiper);
+  changeAdvantagesSwiper();
+  window.advantagesSwiper = advantagesSwiper;
+})();
+
 /* ЗАМЕНА ТЕКСТА */
 (function () {
   var changeText = function () {
@@ -402,7 +505,6 @@
     newContactsElem.classList.add('contacts-list--shadow');
   }
 })();
-
 
 // МАСКА ДЛЯ ПОЛЯ ТЕЛЕФОНА
 

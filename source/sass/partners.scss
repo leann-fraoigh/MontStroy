@@ -1,8 +1,16 @@
 $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
 
+.partners {
+  @media (min-width: $l-width) {
+    overflow: hidden;
+  }
+}
+
 .partners__wrapper {
   @media (min-width: $l-width) {
     @include line;
+
+    position: relative;
 
     &::before {
       top: 22px;
@@ -10,18 +18,20 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
       right: 153px;
     }
   }
-  margin-top: 50px;
+  // margin-top: 50px;
   margin-bottom: 62px;
   // spaceBetween: -10,
 }
 
 .partners__container {
   @media (min-width: $l-width) {
+    position: static;
     display: flex;
     justify-content: stretch;
   }
 
   overflow: visible;
+  padding-bottom: 35px;;
 }
 
 
@@ -36,6 +46,7 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
   width: 57px;
   height: 34px;
 
+  outline: none;
   border-width: 2px;
   border-color: #292929;
 
@@ -93,7 +104,7 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
     flex-grow: 1;
     // margin-left: -10px; //swiper
   }
-  padding-bottom: 35px;
+  // padding-bottom: 35px;
 }
 .partners__item {
   display: flex;
@@ -172,10 +183,6 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
     display: none;
   }
 
-  // .partners__list {
-  //   // flex-wrap: wrap;
-  // }
-
   .partners__item {
   @media (min-width: $m-width) {
     border: none;
@@ -214,6 +221,10 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
       &--ntf a {
         background-image: url('../img/ntf-bw-l@1x.png');
         background-position: center;
+      }
+
+      & a {
+        border-color: transparent;
       }
 
       & a:hover,
