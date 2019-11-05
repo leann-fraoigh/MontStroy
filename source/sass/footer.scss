@@ -315,6 +315,7 @@
 
   .footer__contacts h2 {
     @include full-width;
+    flex-basis: auto;
     box-sizing: border-box;
     padding-left: 20px;
     padding-bottom: 6px;
