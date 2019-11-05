@@ -1,3 +1,5 @@
+/* eslint-disable curly */
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable no-redeclare */
 /* eslint-disable new-cap */
 /* eslint-disable no-console */
@@ -257,6 +259,24 @@
 
 /* АККОРДЕОНЫ */
 (function () {
+  // Полифилл для IE
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector ||
+                                Element.prototype.webkitMatchesSelector;
+  }
+
+  if (!Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var el = this;
+
+      do {
+        if (el.matches(s)) return el;
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+      return null;
+    };
+  }
+
   var Enter = 13;
   var allButtons = document.querySelectorAll('.services__item button');
   var allElements = document.querySelectorAll('.services__item');
