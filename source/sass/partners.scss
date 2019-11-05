@@ -47,20 +47,25 @@ $gradient: linear-gradient(rgba(255, 255, 255, 0.6), rgba(225, 225, 225, 0.6));
   width: 57px;
   height: 34px;
 
-  outline: none;
   border-width: 2px;
   border-color: #292929;
 
   line-height: 25px;
 
-
   &:hover,
   &:focus {
-    background-color: $brand-color;
-
     & svg {
       fill: #000000;
     }
+  }
+
+  &:hover {
+    background-color: $brand-color;
+    outline: none;
+  }
+
+  &:focus {
+    background-color: transparent;
   }
 
   &:first-of-type {
