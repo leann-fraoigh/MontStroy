@@ -58,6 +58,29 @@
 @media (max-width: $m-width-max) {
 
   @media (min-width: $m-width) {
+    @media all and (-ms-high-contrast:none){
+      *::-ms-backdrop, .partners__item.swiper-slide:not([style*="z-index: 1;"]),
+      .advantages__item.swiper-slide:not([style*="z-index: 1;"]) {
+        transform: scale(0.9) !important;
+      }
+
+      *::-ms-backdrop,
+      .partners__list,
+      .advantages__list {
+        margin-right: 98px;
+      }
+
+      *::-ms-backdrop,
+      .partners__list .partners__item.swiper-slide,
+      .advantages__list .advantages__item.swiper-slide {
+        margin-right: -10px !important;
+        margin-left: -10px !important;
+      }
+    }
+  }
+
+
+  @media (min-width: $m-width) {
   .advantages__list.swiper-wrapper {
     position: initial;
     width: initial;
