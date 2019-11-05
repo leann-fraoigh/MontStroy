@@ -349,7 +349,7 @@
 
   var resetHeight = function () {
     if (window.matchMedia('(min-width: 1024px)').matches || window.matchMedia('(max-width: 767px)').matches) {
-      document.querySelector('.services__list').style.height = '';
+      document.querySelector('.services__list').style.height = 'auto';
     }
   };
 
