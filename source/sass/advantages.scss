@@ -63,6 +63,9 @@
     justify-content: normal;
     margin: 0;
     color: $dark-color;
+    @media (min-width: $m-width) {
+      height: 345px;
+    }
   }
 
   .advantages__item {

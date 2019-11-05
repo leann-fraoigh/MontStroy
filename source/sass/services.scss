@@ -106,10 +106,15 @@
     display: block;
 
     margin-left: -20px;
+    // @media (min-width: $m-width) {
+    //   columns: 2;
+    //   column-gap: 0;
+    //   column-fill: balance;
+    // }
     @media (min-width: $m-width) {
-      columns: 2;
-      column-gap: 0;
-      column-fill: balance;
+      display: flex;
+      flex-direction: column;
+      height: 345px;
     }
   }
 
@@ -185,7 +190,10 @@
     position: relative;
     @media (min-width: $m-width) {
       display: inline-block;
-      width: 94.5%;
+      // width: 94.5%;
+      width: 47.4%;
+      flex-basis: 0;
+      flex-grow: 0;
     }
     // display: block; // Так было в сданной версии
     box-sizing: border-box;
