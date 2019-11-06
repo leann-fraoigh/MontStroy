@@ -21,10 +21,13 @@
   margin-left: -44px;
 }
 
+
+
 .services__item {
-  flex-basis: 26%;
+  flex-basis: 260px;
   flex-grow: 1;
   flex-shrink: 1;
+  min-width: 210px;
 
   box-sizing: border-box;
   @media (min-width: $l-width) {
@@ -35,8 +38,19 @@
   // margin-left: 45px;
   margin-bottom: 44px;
   padding: 20px 50px 16px 44px;
+  @media (min-width: $l-width) {
+    padding-right: 4.1%;
+    padding-left: 3.6%;
+  }
 
   box-shadow: 0px 5px 9px 1px rgba(0, 0, 0, 0.05);
+}
+
+// Для IE
+@media (min-width: $l-width) and (max-width: 1225px){
+  *::-ms-backdrop, .services__item {
+    flex-basis: 208px;
+  }
 }
 
 .services__item h3 {
